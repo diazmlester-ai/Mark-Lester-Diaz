@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automations & AI Agents Showcase</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet font-display:swap">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Anton', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        gold: '#ECD06F',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles matching standard high-fidelity design */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030303;
+            color: #f5f5f5;
+        }
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-gold selection:text-black">
+
+    <!-- Top elegant branding header -->
+    <header class="w-full border-b border-white/5 py-6 px-6 sm:px-12 backdrop-blur-md bg-black/40 sticky top-0 z-40 transition-all">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex flex-col select-none">
+                <span class="font-heading text-2xl tracking-wider text-white uppercase">
+                    Tech<span class="text-gold">Mark</span>
+                </span>
+                <span class="text-[9px] tracking-[0.25em] font-mono text-neutral-400 uppercase -mt-1 block">
+                    Automation Showcase
+                </span>
+            </div>
+            <div>
+                <a href="#automations" class="font-mono text-[10px] uppercase tracking-widest text-neutral-400 hover:text-gold transition-colors duration-300">
+                    / Works
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow flex items-center justify-center px-4 py-16 sm:py-24" id="automations">
+        <div class="max-w-5xl w-full">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-16 select-none">
+                <div class="inline-flex items-center gap-2 mb-4 px-3 py-1 border border-white/10 bg-white/5 rounded-full">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold animate-ping"></span>
+                    <span class="font-mono text-[9px] text-neutral-400 uppercase tracking-widest">Featured Deployment</span>
+                </div>
+                <h1 class="font-heading text-5xl sm:text-7xl uppercase tracking-wider text-white mb-4">
+                    Automations & <span class="text-gold">AI Agents</span>
+                </h1>
+                <p class="text-sm font-mono max-w-xl mx-auto text-neutral-400 leading-relaxed uppercase tracking-wider">
+                    Eliminating operational bottlenecks through production-grade n8n engine blueprints.
+                </p>
+            </div>
+
+            <!-- Showcase Card Container with subtle shadow, borders and custom hover interactions -->
+            <div class="relative group border border-white/10 dark:border-white/5 bg-[#0a0a0a] p-3 sm:p-5 transition-all duration-500 hover:border-gold/30 hover:shadow-[0_0_50px_rgba(236,208,111,0.05)] rounded-none">
+                
+                <!-- Corner architectural decoration lines -->
+                <div class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-gold opacity-40 group-hover:opacity-100 transition-opacity"></div>
+                <div class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-gold opacity-40 group-hover:opacity-100 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-gold opacity-40 group-hover:opacity-100 transition-opacity"></div>
+                <div class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-gold opacity-40 group-hover:opacity-100 transition-opacity"></div>
+
+                <!-- Showcase card header with status indicators -->
+                <div class="flex items-center justify-between pb-3 mb-4 border-b border-white/5 text-xs font-mono select-none">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+                        <span class="text-neutral-300 tracking-wider uppercase font-bold text-[10px]">
+                            PROD DEPLOYMENT
+                        </span>
+                    </div>
+                    <span class="text-[9px] text-neutral-500 uppercase tracking-widest">
+                        v1.4.0 • Node Graph
+                    </span>
+                </div>
+
+                <!-- Image Showcase Viewport -->
+                <div class="relative overflow-hidden border border-white/10 bg-black/50 group/img flex justify-center items-center">
+                    
+                    <!-- Overlay shadow/glare overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100 group-hover/img:opacity-40 transition-opacity duration-500 z-10 pointer-events-none"></div>
+                    
+                    <!-- Centered interactive layout prompt -->
+                    <div class="absolute inset-0 bg-black/30 backdrop-blur-[1px] opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
+                        <button 
+                            id="trigger-view-on-image"
+                            class="px-5 py-3 bg-white text-black font-mono text-xs uppercase tracking-widest hover:bg-gold hover:text-black transition-colors flex items-center gap-2.5 shadow-xl font-bold rounded-none"
+                        >
+                            <span>View in Full Window</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Exact Requested Image Source -->
+                    <img 
+                        id="showcase-target-image"
+                        src="AI Agent for Facebook.jpg" 
+                        alt="AI Agent for Facebook Production n8n Automation Engine Blueprint" 
+                        class="w-full h-auto brightness-[0.93] group-hover/img:brightness-100 transition-all duration-500 scale-100 group-hover/img:scale-[1.01]"
+                        referrerpolicy="no-referrer"
+                    >
+                </div>
+
+                <!-- Showcase card lower status deck -->
+                <div class="mt-6 flex flex-col md:flex-row md:items-center justify-between gap-6 pt-5 border-t border-white/5">
+                    
+                    <!-- Left: Metadata Title and Captions -->
+                    <div class="max-w-xl">
+                        <h2 class="text-white font-heading text-2xl sm:text-3xl uppercase tracking-wider mb-1.5">
+                            AI Agent for Facebook
+                        </h2>
+                        <p class="text-sm font-sans text-neutral-400 leading-relaxed font-light">
+                            An advanced n8n workflow designed to continuously monitor Facebook comments and trigger instant AI responses via Google Gemini and custom webhook actions.
+                        </p>
+                    </div>
+
+                    <!-- Right: Bottom Standalone trigger button -->
+                    <div class="flex-shrink-0">
+                        <button 
+                            id="trigger-view"
+                            class="w-full md:w-auto px-6 py-3.5 bg-black border border-white/20 hover:border-gold hover:text-gold text-white font-mono text-[10px] tracking-widest uppercase transition-all flex items-center justify-center gap-2.5 font-bold select-none"
+                        >
+                            <span>VIEW IN FULL WINDOW</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Full-screen Lightbox Popup modal container -->
+    <div id="lightbox" class="fixed inset-0 bg-black/98 backdrop-blur-xl z-50 flex flex-col items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        
+        <!-- Interactive lightbox backdrop dismisser -->
+        <div id="lightbox-backdrop" class="absolute inset-0 cursor-zoom-out"></div>
+
+        <!-- Float top controlling action overlay bar -->
+        <div class="relative w-full max-w-7xl flex items-center justify-between border-b border-white/10 pb-4 mb-4 z-10 font-mono text-xs">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-gold animate-pulse"></span>
+                <span class="text-neutral-400">n8n Live Workflow:</span>
+                <span id="lightbox-title" class="text-gold font-bold uppercase tracking-wider">AI Agent for Facebook</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="hidden sm:inline text-neutral-500 font-mono text-[10px]">
+                    PRESS ESC TO CLOSE WINDOW
+                </span>
+                <button 
+                    id="close-lightbox"
+                    class="px-4 py-2 bg-neutral-900 border border-white/20 hover:border-gold text-neutral-300 hover:text-gold text-[10px] tracking-widest uppercase transition-colors flex items-center gap-1.5 font-bold"
+                >
+                    <span>CLOSE [ESC]</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Lightbox Centered Image Viewport -->
+        <div class="relative max-w-7xl max-h-[80vh] w-full flex items-center justify-center z-10 border border-white/5 bg-[#080808] overflow-hidden select-none">
+            <!-- Exact Original Image -->
+            <img 
+                id="lightbox-image" 
+                src="AI Agent for Facebook.jpg" 
+                alt="AI Agent for Facebook (Full Screenshot)" 
+                class="max-w-full max-h-[70vh] md:max-h-[80vh] object-contain shadow-2xl transition-transform duration-500"
+                referrerpolicy="no-referrer"
+            >
+        </div>
+
+        <!-- Bottom validation signature tag -->
+        <div class="relative mt-5 z-10 text-[9px] font-mono tracking-widest text-gold uppercase select-none text-center">
+            Verified Production n8n Node Graph • Running on Container Infrastructure
+        </div>
+
+    </div>
+
+    <!-- Minimal Foot Deck -->
+    <footer class="w-full border-t border-white/5 py-8 text-center select-none font-mono text-[10px] text-neutral-500">
+        <div>
+            &copy; <script>document.write(new Date().getFullYear())</script> TechMark Portfolio. Powered by Automation.
+        </div>
+    </footer>
+
+    <!-- Interactive scripting engine for Lightbox & Keys -->
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const triggerView = document.getElementById('trigger-view');
+        const triggerViewOnImage = document.getElementById('trigger-view-on-image');
+        const closeLightbox = document.getElementById('close-lightbox');
+        const lightboxBackdrop = document.getElementById('lightbox-backdrop');
+
+        // Open Lightbox
+        const openLightbox = () => {
+            lightbox.classList.remove('opacity-0', 'pointer-events-none');
+            lightbox.classList.add('opacity-100', 'pointer-events-auto');
+            document.body.style.overflow = 'hidden';
+        };
+
+        // Close Lightbox
+        const dismissLightbox = () => {
+            lightbox.classList.add('opacity-0', 'pointer-events-none');
+            lightbox.classList.remove('opacity-100', 'pointer-events-auto');
+            document.body.style.overflow = '';
+        };
+
+        // Event Listeners for triggers
+        triggerView.addEventListener('click', openLightbox);
+        triggerViewOnImage.addEventListener('click', openLightbox);
+
+        // Click on X to close
+        closeLightbox.addEventListener('click', dismissLightbox);
+
+        // Click on background overlay to close
+        lightboxBackdrop.addEventListener('click', dismissLightbox);
+
+        // ESC Key listener to close modal safely
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                dismissLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

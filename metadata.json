@@ -1,0 +1,6 @@
+{
+  "name": "TechMark Portfolio",
+  "description": "A high-fidelity minimalist single-page portfolio website for TechMark.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
