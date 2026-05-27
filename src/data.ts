@@ -54,36 +54,36 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     name: "Athena Quinio",
     role: "Head of Operations",
-    company: "Stackline",
-    text: "Before working with Mark, our support team was buried in repetitive tickets. After he deployed the autonomous AI job & lead scraper, 80% of our pipeline was hands-free. Genuinely changed how we operate.",
+    company: "Stackline Media",
+    text: "Mark deployed an autonomous AI Agent for Facebook using n8n that handles all our incoming customer inquiries. Implementing intelligent intent detection and instant FAQ replies slashed customer response times to under 10 seconds. Highly recommended!",
     initials: "AQ"
   },
   {
-    name: "JR Gonzalez",
-    role: "Sales Director",
-    company: "Lumio Commerce",
-    text: "Our lead pipeline was a mess—leads fell through the cracks constantly. Mark rebuilt the entire sync in Make.com and HubSpot. Our response times went from 4 hours to 3 minutes, and sales conversion surged.",
-    initials: "JG"
-  },
-  {
     name: "Gino Resuello",
-    role: "COO",
-    company: "Payband Fintech",
-    text: "We had six legacy systems that never talked to each other. Mark built custom API middleware connecting them in real-time. We eliminated 40 hours a week of manual logging overnight. The ROI was instant.",
+    role: "Creative Director",
+    company: "Payband Media & Co.",
+    text: "The Automated Content Repurposing Engine built by Mark in Zapier and Make.com is a pure game-changer. It translates raw audio and video files into SEO-ready blog posts and platform-tuned social updates instantly. Repurposing overhead dropped from hours to under 5 minutes!",
     initials: "GR"
   },
   {
     name: "Sarah Jenkins",
-    role: "Operations Manager",
-    company: "Vanguard Agents",
-    text: "Mark's custom GoHighLevel and Zapier CRM automated systems are masterfully built. He saved our intake coordinators at least 20 hours a week, and lead tracking accuracy peaked.",
+    role: "Finance Operations Lead",
+    company: "Vanguard Bookkeeping",
+    text: "Our bookkeeping team used to waste precious hours exporting ledger files from Xero and attaching them to Asana tasks. Mark's automated transaction archive pipeline on Make.com made transaction reconciliation 100% accurate, running flawlessly behind the scenes.",
     initials: "SJ"
   },
   {
+    name: "JR Gonzalez",
+    role: "Managing Director",
+    company: "Lumio Academy",
+    text: "We automated our student onboarding pipelines using Mark's Jotform, Zapier, and ClickFunnels enrollment system. Registrations trigger instant course platform delivery and user sync directly with ActiveCampaign. Fast, seamless, and completely hands-off.",
+    initials: "JG"
+  },
+  {
     name: "Michael Chen",
-    role: "Lead Platform Engineer",
+    role: "Sales Enablement Head",
     company: "NovaSphere Tech",
-    text: "Mark's automated workflows are exceptionally well-documented and robust. He solved our backend syncing delays between multiple databases in just a few days of work.",
+    text: "Our sales team struggled with manual prospect qualification. Mark engineered our Automated Lead Enrichment pipeline in Zapier with Apollo.io. Incoming leads are now structured, scored, and prioritized immediately, with AI-driven email drafts generated on the spot.",
     initials: "MC"
   }
 ];
