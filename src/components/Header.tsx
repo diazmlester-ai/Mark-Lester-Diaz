@@ -23,6 +23,7 @@ export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
   }, []);
 
   const navItems = [
+    { label: "Home", href: "#" },
     { label: "Services", href: "#services" },
     { label: "Projects", href: "#projects" },
     { label: "About Me", href: "#about" },
@@ -33,6 +34,13 @@ export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
+    if (href === "#") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       const topOffset = element.getBoundingClientRect().top + window.scrollY - 80;
@@ -62,7 +70,7 @@ export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
           }}
           className="flex flex-col select-none group"
         >
-          <span className="font-heading text-3xl sm:text-4xl tracking-widest text-[#ECD06F] group-hover:text-black dark:group-hover:text-white transition-colors duration-300 uppercase">
+          <span className="font-heading text-2xl sm:text-3xl tracking-widest text-[#ECD06F] group-hover:text-black dark:group-hover:text-white transition-colors duration-300 uppercase">
             MARK
           </span>
         </a>

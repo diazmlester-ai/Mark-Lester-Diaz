@@ -90,22 +90,22 @@ export default function Contact() {
                   <Wrapper
                     key={contact.id}
                     {...linkProps}
-                    className={`group flex items-center justify-between p-5 sm:p-6 border border-neutral-100 dark:border-neutral-900 bg-neutral-50/50 dark:bg-neutral-950/20 hover:border-[#ECD06F]/30 transition-all duration-300 select-none ${
+                    className={`group flex items-center justify-between p-3.5 sm:p-4 border border-neutral-100 dark:border-neutral-900 bg-neutral-50/50 dark:bg-neutral-950/20 hover:border-[#ECD06F]/30 transition-all duration-300 select-none ${
                       isLink ? "cursor-none clickable hover:shadow-[0_2px_15px_rgba(236,208,111,0.02)]" : ""
                     }`}
                   >
-                    <div className="flex items-center gap-5 min-w-0">
+                    <div className="flex items-center gap-4 min-w-0">
                       {/* Left icon wrapper */}
-                      <div className="flex items-center justify-center w-12 h-12 bg-white dark:bg-neutral-950 border border-neutral-200/50 dark:border-neutral-800/50 group-hover:border-[#ECD06F]/30 transition-colors shrink-0">
+                      <div className="flex items-center justify-center w-10 h-10 bg-white dark:bg-neutral-950 border border-neutral-200/50 dark:border-neutral-800/50 group-hover:border-[#ECD06F]/30 transition-colors shrink-0">
                         {contact.icon}
                       </div>
                       
                       {/* Label and display text (highly legible bold text with larger font-size) */}
                       <div className="min-w-0">
-                        <span className="text-[10px] sm:text-xs font-mono uppercase text-[#ECD06F] block tracking-wider leading-none mb-1 text-neutral-400 dark:text-neutral-500">
+                        <span className="text-[10px] sm:text-xs font-mono uppercase text-[#ECD06F] block tracking-wider leading-none mb-1 text-neutral-450 dark:text-neutral-400 font-bold">
                           {contact.title}
                         </span>
-                        <span className="text-base sm:text-lg font-normal text-neutral-900 dark:text-neutral-100 group-hover:text-[#ECD06F] transition-colors leading-snug truncate block">
+                        <span className="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-100 group-hover:text-[#ECD06F] transition-colors leading-snug truncate block">
                           {contact.displayValue}
                         </span>
                       </div>

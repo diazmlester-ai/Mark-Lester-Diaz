@@ -416,7 +416,7 @@ export default function Projects() {
               // FEATURED PROJECTS
             </span>
             <h2 className="font-heading text-5xl sm:text-7xl text-neutral-900 dark:text-white uppercase leading-none">
-              DEPLOYED WORKFLOWS.
+              DEPLOYED WORKFLOWS
             </h2>
             <p className="mt-5 text-neutral-600 dark:text-neutral-400 text-base sm:text-lg">
               Real-world automation systems designed to solve business challenges and deliver measurable impact.
@@ -530,7 +530,7 @@ export default function Projects() {
 
                         {/* CTA Line */}
                         <span className="font-mono text-xs tracking-widest text-[#ECD06F] uppercase inline-flex items-center gap-1.5 group-hover:brightness-110 transition-all">
-                          <span>View Blueprint</span>
+                          <span>View Case Study</span>
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                         </span>
                       </div>
@@ -598,7 +598,7 @@ export default function Projects() {
 
                     {/* CTA Line */}
                     <span className="font-mono text-xs tracking-widest text-[#ECD06F] uppercase inline-flex items-center gap-1.5 group-hover:brightness-110 transition-all">
-                      <span>View Blueprint</span>
+                      <span>View Case Study</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                     </span>
                   </div>
@@ -609,134 +609,182 @@ export default function Projects() {
 
         </div>
 
-        {/* Modal Overlay Component when selected */}
+        {/* Sliding Side-Drawer Component for Case Studies */}
         {activeProject && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            {/* Ambient Darkened Backdrop with blur */}
+          <div className="fixed inset-0 z-50 flex justify-end">
+            {/* Dark glassmorphic backdrop overlay */}
             <div
-              className="absolute inset-0 bg-black/90 backdrop-blur-md"
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
               onClick={() => setActiveProject(null)}
             />
 
-            {/* Modal Box */}
-            <div className="relative bg-white dark:bg-neutral-950 border border-[#ECD06F]/30 max-w-4xl w-full max-h-[90vh] overflow-y-auto p-8 md:p-12 z-10 rounded-none shadow-[0_0_50px_rgba(236,208,111,0.1)]">
-              {/* Close Button right corner */}
-              <button
-                onClick={() => setActiveProject(null)}
-                className="absolute top-6 right-6 p-2 text-neutral-400 hover:text-black dark:hover:text-[#ECD06F] transition-colors cursor-none clickable"
-                aria-label="Close Case Study Details"
-              >
-                <X className="w-6 h-6" />
-              </button>
+            {/* Slide-over Panel Box */}
+            <div className="relative w-full max-w-xl md:max-w-2xl bg-white dark:bg-neutral-950 shadow-2xl z-10 flex flex-col h-full text-neutral-900 dark:text-neutral-100 border-l border-neutral-200 dark:border-neutral-800 animate-slide-in-right">
+              
+              {/* Drawer Top Header (Matching structure from reference) */}
+              <div className="bg-neutral-50 dark:bg-neutral-900 p-6 md:p-8 border-b border-neutral-200 dark:border-neutral-850 relative">
+                {/* Close Button top-right corner */}
+                <button
+                  onClick={() => setActiveProject(null)}
+                  className="absolute top-6 right-6 p-2 text-neutral-400 hover:text-black dark:hover:text-[#ECD06F] transition-colors cursor-none clickable select-none"
+                  aria-label="Close Case Study Details"
+                >
+                  <X className="w-6 h-6" />
+                </button>
 
-              {/* Modal Category Pill */}
-              <span className="text-[10px] font-mono tracking-widest text-[#ECD06F] border border-[#ECD06F]/20 px-2.5 py-1 uppercase inline-block mb-4">
-                {activeProject.category} // ARCHITECTURE BLUEPRINT
-              </span>
-
-              {/* Title display */}
-              <h3 className="font-heading text-4xl md:text-5xl text-neutral-900 dark:text-white uppercase mb-4 tracking-wider">
-                {activeProject.title}
-              </h3>
-
-              {/* Core Description */}
-              <p className="text-neutral-700 dark:text-neutral-300 text-sm leading-relaxed max-w-3xl mb-8">
-                {activeProject.description}
-              </p>
-
-              {/* If the project has an associated production canvas screenshot, render it */}
-              {(activeProject.workflowImageUrl || activeProject.id === "project-1") && (
-                <div className="border border-black/5 dark:border-white/5 p-6 bg-neutral-50 dark:bg-neutral-900/30 mb-8 rounded-none">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-3 border-b border-black/5 dark:border-white/10">
-                    <div className="flex items-center gap-2">
-                      <Cpu className="w-4 h-4 text-[#ECD06F]" />
-                      <span className="font-mono text-[10px] tracking-widest uppercase text-neutral-400 dark:text-neutral-500">
-                        Production Workflow Architecture
-                      </span>
-                    </div>
-                    <button
-                      onClick={() => setFullscreenImage(activeProject.workflowImageUrl || "/AI Agent for Facebook.jpg")}
-                      className="px-3 py-1.5 font-mono text-[9px] tracking-wider uppercase bg-black dark:bg-[#ECD06F] text-white dark:text-black hover:bg-neutral-850 dark:hover:brightness-110 transition-colors flex items-center gap-1.5 cursor-none clickable select-none font-bold"
-                    >
-                      <span>View in Full Window</span>
-                      <Maximize2 className="w-3.5 h-3.5" />
-                    </button>
+                {/* Automation Icon and Meta Info */}
+                <div className="flex items-center gap-4 pr-12">
+                  <div className="w-12 h-12 rounded-xl bg-[#ECD06F]/10 dark:bg-[#ECD06F]/15 text-[#ECD06F] flex items-center justify-center border border-[#ECD06F]/20 shrink-0">
+                    <Sparkles className="w-5 h-5 animate-pulse" />
                   </div>
-                  
-                  <div 
-                    onClick={() => setFullscreenImage(activeProject.workflowImageUrl || "/AI Agent for Facebook.jpg")}
-                    className="relative group border border-black/10 dark:border-white/10 bg-[#0c0c0c] p-1.5 overflow-hidden cursor-none clickable transition-all duration-300 hover:border-[#ECD06F]/50"
-                  >
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-300 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                      <span className="font-mono text-[10px] uppercase tracking-wider text-white bg-black/80 px-3 py-2 border border-white/20">
-                        Click to Expand / Fullscreen
-                      </span>
-                    </div>
-                    <img 
-                      src={activeProject.workflowImageUrl || "/AI Agent for Facebook.jpg"} 
-                      alt={`Production Canvas for ${activeProject.title}`}
-                      className="w-full h-auto brightness-95 group-hover:brightness-100 transition-all duration-300"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                </div>
-              )}
-
-              {/* Execution details list & Key metrics */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 border-t border-black/5 dark:border-white/5 pt-8">
-                <div className="md:col-span-2">
-                  <h4 className="font-mono text-xs tracking-widest text-[#ECD06F] uppercase mb-4 flex items-center gap-1.5 font-bold">
-                    <FileCheck2 className="w-4 h-4" />
-                    <span>How it performs</span>
-                  </h4>
-                  <ul className="space-y-3 font-sans text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">
-                    {activeProject.details.map((detail, idx) => (
-                      <li key={idx} className="flex gap-2.5 items-start">
-                        <CheckCircle2 className="w-4 h-4 text-[#ECD06F] shrink-0 mt-0.5" />
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="flex flex-col gap-6">
                   <div>
-                    <h4 className="font-mono text-xs tracking-widest text-[#ECD06F] uppercase mb-3 font-bold">
-                      // PERFORMANCE SCORE
-                    </h4>
-                    {activeProject.metrics && (
-                      <div className="bg-neutral-50 dark:bg-neutral-900/50 p-4 border border-black/5 dark:border-white/5">
-                        <span className="text-[10px] font-mono uppercase text-neutral-400 block">
-                          {activeProject.metrics.label}
-                        </span>
-                        <span className="font-heading text-3xl text-neutral-900 dark:text-white mt-1 block">
-                          {activeProject.metrics.value}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div>
-                    <h4 className="font-mono text-xs tracking-widest text-[#ECD06F] uppercase mb-3 font-bold">
-                      // TECHNOLOGY STACK
-                    </h4>
-                    <div className="flex flex-wrap gap-1.5">
-                      {activeProject.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[10px] font-mono px-2 py-1 bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-800"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                    {/* Top path category structure */}
+                    <div className="text-[10px] font-mono tracking-widest uppercase text-neutral-500 dark:text-neutral-400 font-extrabold flex items-center flex-wrap gap-1">
+                      <span>AI AUTOMATIONS</span>
+                      <span className="text-neutral-300 dark:text-neutral-700 font-normal">·</span>
+                      <span className="text-[#ECD06F] pr-1">{activeProject.category.toUpperCase()}</span>
+                      {activeProject.metrics && (
+                        <>
+                          <span className="text-neutral-300 dark:text-neutral-700 font-normal">·</span>
+                          <span className="text-emerald-500 border border-emerald-500/25 bg-emerald-550/5 px-1.5 py-0.5 rounded-none font-bold">
+                            {activeProject.metrics.value}
+                          </span>
+                        </>
+                      )}
                     </div>
+                    {/* Automation Name */}
+                    <h3 className="font-heading text-2xl md:text-3xl text-neutral-900 dark:text-white uppercase leading-tight font-black mt-1.5 tracking-wide">
+                      {activeProject.projectName || activeProject.title}
+                    </h3>
                   </div>
                 </div>
               </div>
 
-              {/* Simple Action Footer in modal */}
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-6 border-t border-black/5 dark:border-white/5 font-mono text-xs">
-                <span className="text-neutral-400">
+              {/* Drawer Body Scroll Content */}
+              <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-8">
+                
+                {/* 1. Production workflow canvas rendering */}
+                {(activeProject.workflowImageUrl || activeProject.id === "project-1") && (
+                  <div className="border border-neutral-200 dark:border-neutral-800 p-4 bg-neutral-50/50 dark:bg-neutral-900/30 rounded-none relative">
+                    <div className="flex items-center justify-between gap-4 mb-3">
+                      <div className="flex items-center gap-2">
+                        <Cpu className="w-4 h-4 text-[#ECD06F]" />
+                        <span className="font-mono text-[9px] tracking-widest uppercase text-neutral-400 dark:text-neutral-500 font-bold">
+                          Workflow Canvas Diagram
+                        </span>
+                      </div>
+                      <button
+                        onClick={() => setFullscreenImage(activeProject.workflowImageUrl || "/AI Agent for Facebook.jpg")}
+                        className="px-2 py-1 font-mono text-[8px] tracking-wider uppercase bg-black dark:bg-[#ECD06F] text-white dark:text-black hover:bg-neutral-850 dark:hover:brightness-110 transition-colors flex items-center gap-1 cursor-none clickable select-none font-bold"
+                      >
+                        <span>Fullscreen</span>
+                      </button>
+                    </div>
+                    
+                    <div 
+                      onClick={() => setFullscreenImage(activeProject.workflowImageUrl || "/AI Agent for Facebook.jpg")}
+                      className="relative group border border-neutral-200 dark:border-neutral-850 bg-neutral-950 p-1 overflow-hidden cursor-none clickable transition-all duration-300 hover:border-[#ECD06F]/40"
+                    >
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-300 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <span className="font-mono text-[9px] uppercase tracking-wider text-white bg-black/90 px-2.5 py-1.5 border border-white/15">
+                          Click to Expand
+                        </span>
+                      </div>
+                      <img 
+                        src={activeProject.workflowImageUrl || "/AI Agent for Facebook.jpg"} 
+                        alt={`Production Canvas for ${activeProject.title}`}
+                        className="w-full h-auto brightness-95 group-hover:brightness-100 transition-all duration-300 max-h-[220px] object-contain"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                  </div>
+                )}
+
+                {/* 2. Project Overview */}
+                <div className="space-y-2">
+                  <p className="text-neutral-700 dark:text-neutral-300 text-sm sm:text-base leading-relaxed">
+                    {activeProject.projectOverview || activeProject.description}
+                  </p>
+                </div>
+
+                {/* 3. Problem Section */}
+                {activeProject.problem && (
+                  <div className="space-y-2">
+                    <h4 className="text-xs font-mono tracking-widest text-[#ECD06F] uppercase font-bold flex items-center gap-1.5">
+                      <span>THE PROBLEM</span>
+                    </h4>
+                    <p className="text-neutral-700 dark:text-neutral-300 text-sm sm:text-base leading-relaxed">
+                      {activeProject.problem}
+                    </p>
+                  </div>
+                )}
+
+                {/* 4. Solution Section */}
+                {activeProject.solution && (
+                  <div className="space-y-3">
+                    <h4 className="text-xs font-mono tracking-widest text-[#ECD06F] uppercase font-bold">
+                      THE SOLUTION
+                    </h4>
+                    <ul className="space-y-3">
+                      {Array.isArray(activeProject.solution) ? (
+                        activeProject.solution.map((item, idx) => (
+                          <li key={idx} className="flex gap-2.5 items-start text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#ECD06F] mt-2 shrink-0 animate-pulse" />
+                            <span>{item}</span>
+                          </li>
+                        ))
+                      ) : (
+                        <li className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">{activeProject.solution}</li>
+                      )}
+                    </ul>
+                  </div>
+                )}
+
+                {/* 5. Tools Used Badge Block */}
+                {(activeProject.tools || activeProject.tags) && (
+                  <div className="space-y-3">
+                    <h4 className="text-xs font-mono tracking-widest text-[#ECD06F] uppercase font-bold">
+                      TOOLS USED
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {(activeProject.tools || activeProject.tags).map((tool) => (
+                        <span 
+                          key={tool} 
+                          className="text-[10px] font-mono px-3.5 py-1.5 bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-300 shadow-sm font-semibold hover:border-neutral-400 dark:hover:border-neutral-700 transition-colors"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* 6. Impact Results Section */}
+                {activeProject.impact && (
+                  <div className="space-y-3">
+                    <h4 className="text-xs font-mono tracking-widest text-[#ECD06F] uppercase font-bold">
+                      RESULTS
+                    </h4>
+                    <ul className="space-y-3">
+                      {Array.isArray(activeProject.impact) ? (
+                        activeProject.impact.map((point, idx) => (
+                          <li key={idx} className="flex gap-2.5 items-start text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                            <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                            <span>{point}</span>
+                          </li>
+                        ))
+                      ) : (
+                        <li className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">{activeProject.impact}</li>
+                      )}
+                    </ul>
+                  </div>
+                )}
+
+              </div>
+
+              {/* Drawer Bottom CTA Action Footer */}
+              <div className="bg-neutral-50 dark:bg-neutral-900 p-6 md:p-8 border-t border-neutral-200 dark:border-neutral-850 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs shrink-0">
+                <span className="text-neutral-500 dark:text-neutral-400">
                   Ready to deploy a similar system?
                 </span>
                 <button
@@ -747,7 +795,7 @@ export default function Projects() {
                       element.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
-                  className="px-6 py-3 bg-[#ECD06F] text-black font-semibold text-[10px] tracking-widest uppercase transition-colors hover:brightness-110 cursor-none clickable flex items-center gap-1.5"
+                  className="px-6 py-3 bg-[#ECD06F] text-black font-black text-[10px] tracking-widest uppercase transition-colors hover:brightness-110 cursor-none clickable flex items-center gap-1.5 shadow-sm"
                 >
                   <span>Build This Stack</span>
                   <Sparkles className="w-3.5 h-3.5" />
@@ -772,7 +820,7 @@ export default function Projects() {
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="text-neutral-400 flex items-center gap-1">Workflow:</span>
-                <span className="text-[#ECD06F] font-bold uppercase">{activeProject?.title || "Workflow Blueprint"}</span>
+                <span className="text-[#ECD06F] font-bold uppercase">{activeProject?.title || "Workflow Case Study"}</span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="hidden sm:inline text-neutral-500">

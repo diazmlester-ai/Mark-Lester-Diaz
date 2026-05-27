@@ -20,6 +20,12 @@ export interface Project {
   workflowImageUrl?: string;
   tags: string[];
   details: string[];
+  projectName?: string;
+  projectOverview?: string;
+  problem?: string;
+  solution?: string | string[];
+  impact?: string | string[];
+  tools?: string[];
 }
 
 export interface ProcessStep {

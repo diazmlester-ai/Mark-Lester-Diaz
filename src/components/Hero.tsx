@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { ArrowRight, Play } from "lucide-react";
 import CircuitBackground from "./CircuitBackground";
+import { motion } from "motion/react";
 
 interface CounterProps {
   target: number;
@@ -103,11 +104,27 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Main Headline */}
-        <h1 className="font-heading font-black text-6xl sm:text-[84px] md:text-[104px] lg:text-[124px] xl:text-[142px] tracking-tight leading-[0.92] transition-all select-all text-neutral-900 dark:text-white max-w-5xl">
-          Automate Smarter. <br />
-          Optimize Workflows. <br />
-          Scale Businesses.
+        {/* Main Headline with Clarify Text Effect */}
+        <h1 className="font-heading font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight leading-[1.05] transition-all select-all text-neutral-900 dark:text-white max-w-5xl flex flex-col items-center justify-center space-y-1 md:space-y-2">
+          {[
+            { text: "Automate Smarter.", delay: 0 },
+            { text: "Optimize Workflows.", delay: 0.3 },
+            { text: "Scale Businesses.", delay: 0.6 }
+          ].map((item, index) => (
+            <motion.span
+              key={index}
+              initial={{ filter: "blur(12px)", opacity: 0, y: 15 }}
+              animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.85,
+                delay: item.delay,
+                ease: [0.16, 1, 0.3, 1]
+              }}
+              className="inline-block relative text-center"
+            >
+              <span className="relative z-10">{item.text}</span>
+            </motion.span>
+          ))}
         </h1>
 
         {/* Exact Requested Tagline */}
