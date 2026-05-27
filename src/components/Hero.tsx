@@ -117,7 +117,6 @@ export default function Hero() {
                 key={index}
                 initial="hidden"
                 animate="visible"
-                whileHover="hover"
                 variants={{
                   hidden: {},
                   visible: {
@@ -142,17 +141,13 @@ export default function Hero() {
                           duration: 0.7,
                           ease: [0.16, 1, 0.3, 1]
                         }
-                      },
-                      hover: {
-                        color: "#ECD06F",
-                        scale: 1.05,
-                        transition: {
-                          duration: 0.15,
-                          ease: "easeOut"
-                        }
                       }
                     }}
-                    className="inline-block transition-colors duration-200"
+                    whileHover={{
+                      scale: 1.12,
+                      transition: { duration: 0.12, ease: "easeOut" }
+                    }}
+                    className="inline-block transition-colors duration-200 text-neutral-900 dark:text-white hover:text-[#ECD06F] dark:hover:text-[#ECD06F] cursor-none clickable"
                   >
                     {char === " " ? "\u00A0" : char}
                   </motion.span>
