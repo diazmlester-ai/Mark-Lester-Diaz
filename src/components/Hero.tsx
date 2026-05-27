@@ -108,23 +108,58 @@ export default function Hero() {
         <h1 className="font-heading font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight leading-[1.05] transition-all select-all text-neutral-900 dark:text-white max-w-5xl flex flex-col items-center justify-center space-y-1 md:space-y-2">
           {[
             { text: "Automate Smarter.", delay: 0 },
-            { text: "Optimize Workflows.", delay: 0.3 },
-            { text: "Scale Businesses.", delay: 0.6 }
-          ].map((item, index) => (
-            <motion.span
-              key={index}
-              initial={{ filter: "blur(12px)", opacity: 0, y: 15 }}
-              animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.85,
-                delay: item.delay,
-                ease: [0.16, 1, 0.3, 1]
-              }}
-              className="inline-block relative text-center"
-            >
-              <span className="relative z-10">{item.text}</span>
-            </motion.span>
-          ))}
+            { text: "Optimize Workflows.", delay: 0.2 },
+            { text: "Scale Businesses.", delay: 0.4 }
+          ].map((item, index) => {
+            const letters = Array.from(item.text);
+            return (
+              <motion.span
+                key={index}
+                initial="hidden"
+                animate="visible"
+                whileHover="hover"
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: {
+                      staggerChildren: 0.02,
+                      delayChildren: item.delay
+                    }
+                  }
+                }}
+                className="inline-block relative text-center cursor-default select-none group"
+              >
+                {letters.map((char, charIdx) => (
+                  <motion.span
+                    key={charIdx}
+                    variants={{
+                      hidden: { filter: "blur(12px)", opacity: 0, y: 15 },
+                      visible: { 
+                        filter: "blur(0px)", 
+                        opacity: 1, 
+                        y: 0,
+                        transition: {
+                          duration: 0.7,
+                          ease: [0.16, 1, 0.3, 1]
+                        }
+                      },
+                      hover: {
+                        color: "#ECD06F",
+                        scale: 1.05,
+                        transition: {
+                          duration: 0.15,
+                          ease: "easeOut"
+                        }
+                      }
+                    }}
+                    className="inline-block transition-colors duration-200"
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+              </motion.span>
+            );
+          })}
         </h1>
 
         {/* Exact Requested Tagline */}

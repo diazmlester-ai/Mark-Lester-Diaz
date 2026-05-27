@@ -194,7 +194,7 @@ export default function AboutMe() {
                 I specialize in building AI-powered workflows, CRM automations, and custom integrations that turn messy operations into clean, efficient, and scalable systems. I don’t just build automations—I design solutions that reduce friction, save time, and help businesses grow sustainably.
               </p>
               <p className="text-neutral-600 dark:text-neutral-400 text-lg sm:text-xl leading-relaxed border-l-2 border-[#ECD06F]/50 pl-4 py-1">
-                My approach is simple: think like a business owner, build like an engineer, and create systems that keep delivering value long after they’re implemented.
+                My approach is simple: <strong className="font-extrabold text-neutral-900 dark:text-white">think like a business owner, build like an engineer, and create systems that keep delivering value long after they’re implemented.</strong>
               </p>
             </div>
 
